@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background">
+
+    <include
+        android:id="@+id/news_app_bar_content"
+        layout="@layout/view_app_bar"/>
+
+    <ProgressBar
+        android:id="@+id/news_progress_dialog"
+        style="@style/CustomProgressDialog"
+        android:layout_centerInParent="true"
+        android:layout_margin="24dp"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/news_content_container"
+        layout="@layout/fragment_news_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/news_app_bar_content"/>
+
+    <navumchyk.aliaksandr.cleanarchitecture.ui.customView.CustomFontTextView
+        android:id="@+id/news_no_content_tv"
+        style="@style/CustomBlackText16"
+        android:layout_margin="24dp"
+        android:layout_below="@+id/news_content_container"
+        android:text="@string/news_no_content"
+        android:visibility="gone"
+        app:customFont="PT_Sans_Regular.ttf"/>
+
+    <View
+        style="@style/CustomShadow"
+        android:layout_below="@+id/news_app_bar_content"/>
+
+</RelativeLayout>

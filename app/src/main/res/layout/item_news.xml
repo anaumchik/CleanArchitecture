@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_news_root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@color/white"
+    android:elevation="2dp">
+
+    <navumchyk.aliaksandr.cleanarchitecture.ui.customView.CustomRoundCornersImageView
+        android:id="@+id/item_news_img"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"/>
+
+    <navumchyk.aliaksandr.cleanarchitecture.ui.customView.CustomFontTextView
+        android:id="@+id/item_news_title_tv"
+        style="@style/CustomBlackText16"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_toEndOf="@+id/item_news_img"
+        android:layout_toRightOf="@+id/item_news_img"
+        app:customFont="PT_Sans_Regular.ttf"/>
+
+    <navumchyk.aliaksandr.cleanarchitecture.ui.customView.CustomFontTextView
+        android:id="@+id/item_news_body_tv"
+        style="@style/CustomBlackText16"
+        android:layout_below="@+id/item_news_img"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:customFont="PT_Sans_Regular.ttf"/>
+
+</RelativeLayout>
