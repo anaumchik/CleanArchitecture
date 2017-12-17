@@ -20,7 +20,6 @@ public class NewsFragmentInteractor extends BaseInteractor implements INewsFragm
 
     @Override
     public Single<ArrayList<NewsModel>> getNews() {
-        log("getNews");
         return mNewsFragmentRepository
                 .getNews()
                 .onErrorReturn(throwable -> {
@@ -33,18 +32,12 @@ public class NewsFragmentInteractor extends BaseInteractor implements INewsFragm
 
         final ArrayList<NewsModel> newsModels = new ArrayList<>();
 
-        newsModels.add(new NewsModel("first departments",
-                                     "Russia, Moscow",
-                                     "https://pbs.twimg.com/profile_images/378800000710852544/d8832a4e3301975477be73152ca29920_400x400.jpeg",
-                                     "open in hours 9-18"));
-        newsModels.add(new NewsModel("second departments",
-                                     "Russia, Tver",
-                                     "https://pbs.twimg.com/profile_images/378800000710852544/d8832a4e3301975477be73152ca29920_400x400.jpeg",
-                                     "open in hours 10-18"));
-        newsModels.add(new NewsModel("third departments",
-                                     "Russia, Krasnodar",
-                                     "https://pbs.twimg.com/profile_images/378800000710852544/d8832a4e3301975477be73152ca29920_400x400.jpeg",
-                                     "open in hours 8-20"));
+        newsModels.add(new NewsModel("#1 Title",
+                                     "#1 Body"));
+        newsModels.add(new NewsModel("#2 Title",
+                                     "#2 Body"));
+        newsModels.add(new NewsModel("#3 Title",
+                                     "#3 Body"));
 
         return newsModels;
     }

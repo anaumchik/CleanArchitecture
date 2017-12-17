@@ -8,7 +8,7 @@ import javax.inject.Singleton;
 import navumchyk.aliaksandr.cleanarchitecture.network.Api;
 import navumchyk.aliaksandr.cleanarchitecture.network.usecase.common.BaseUseCase;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModelResponse;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.RSSModelResponse;
 import rx.Single;
 import rx.subjects.PublishSubject;
 
@@ -27,10 +27,9 @@ public class GetNewsUseCase extends BaseUseCase<Void, ArrayList<NewsModel>, Void
 
     @Override
     public Single<ArrayList<NewsModel>> buildUseCaseObservable(Void param,
-                                                                  PublishSubject retrievedData) {
-        log("GetNewsUseCase");
+                                                               PublishSubject retrievedData) {
         return mApiClient
                 .getNews()
-                .map(NewsModelResponse::getNewsModelList);
+                .map(RSSModelResponse::getNewsModelList);
     }
 }

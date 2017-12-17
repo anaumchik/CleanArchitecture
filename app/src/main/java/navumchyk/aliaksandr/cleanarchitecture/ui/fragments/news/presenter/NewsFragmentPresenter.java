@@ -5,8 +5,8 @@ import android.support.annotation.NonNull;
 import java.util.ArrayList;
 
 import navumchyk.aliaksandr.cleanarchitecture.interactors.news.INewsFragmentInteractor;
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.common.BasePresenter;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.views.INewsFragmentView;
 import navumchyk.aliaksandr.cleanarchitecture.utils.RxIoTransformer;
 import rx.Subscription;
@@ -44,7 +44,6 @@ public class NewsFragmentPresenter extends BasePresenter<INewsFragmentView>
 
     @Override
     public void loadNews() {
-        log("loadNews");
         mNewsFragmentView.showProgressDialog();
         mNewsFragmentView.hideContentContainer();
         mNewsFragmentView.hideNoContentContainer();
@@ -56,30 +55,24 @@ public class NewsFragmentPresenter extends BasePresenter<INewsFragmentView>
         mCompositeSubscription.add(loadNewsSubscription);
     }
 
-    private void handleSuccessLoadNews(@NonNull ArrayList<NewsModel> newsModelArrayList) {
-        // view actions
-        setNewsToView(newsModelArrayList);
-        // hide progress
-        mNewsFragmentView.hideProgressDialog();
-        mNewsFragmentView.showContentContainer();
+    @Override
+    public void observeNewsAdapterItemClick(PublishSubject<String> subject) {
+        final Subscription subscription = subject
+                .subscribe(link -> log("link: " + link),
+                           throwable -> logError(throwable.getMessage()));
+
+        mCompositeSubscription.add(subscription);
     }
 
-    private void setNewsToView(ArrayList<NewsModel> newsModel) {
-        for (int i = 0; i < newsModel.size(); i++) {
-            log(newsModel.get(i).toString());
-        }
-
-        mNewsFragmentView.setNewsAdapterData(newsModel);
+    private void handleSuccessLoadNews(@NonNull ArrayList<NewsModel> newsModelArrayList) {
+        mNewsFragmentView.setNewsAdapterData(newsModelArrayList);
+        mNewsFragmentView.hideProgressDialog();
+        mNewsFragmentView.showContentContainer();
     }
 
     private void handleErrorLoadNews(Throwable throwable) {
         logError(throwable.getMessage());
         mNewsFragmentView.hideProgressDialog();
         mNewsFragmentView.showNoContentContainer();
-    }
-
-    @Override
-    public void observeNewsAdapterItemClick(PublishSubject<String> stringPublishSubject) {
-
     }
 }

@@ -25,9 +25,11 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginTop="24dp"
+        android:ellipsize="end"
+        android:maxLines="3"
         android:layout_toEndOf="@+id/item_news_img"
         android:layout_toRightOf="@+id/item_news_img"
-        app:customFont="PT_Sans_Regular.ttf"/>
+        app:customFont="PT_Sans_Bold.ttf"/>
 
     <navumchyk.aliaksandr.cleanarchitecture.ui.customView.CustomFontTextView
         android:id="@+id/item_news_body_tv"
@@ -38,7 +40,8 @@
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:ellipsize="end"
+        android:maxLines="6"
         app:customFont="PT_Sans_Regular.ttf"/>
 
 </RelativeLayout>

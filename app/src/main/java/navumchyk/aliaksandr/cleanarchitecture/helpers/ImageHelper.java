@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import navumchyk.aliaksandr.cleanarchitecture.R;
@@ -20,6 +21,10 @@ import rx.Subscription;
 public class ImageHelper implements IImageHelper {
 
     private static final float THUMBNAIL_SIZE = 0.1f;
+
+    @Inject
+    public ImageHelper() {
+    }
 
     @Override
     public Subscription loadImageRx(Context context,

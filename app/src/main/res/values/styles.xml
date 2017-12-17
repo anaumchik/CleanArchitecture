@@ -29,10 +29,10 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="CustomBlueText20">
+    <style name="CustomRedText20">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/blue</item>
+        <item name="android:textColor">@color/red</item>
         <item name="android:textSize">20sp</item>
     </style>
 

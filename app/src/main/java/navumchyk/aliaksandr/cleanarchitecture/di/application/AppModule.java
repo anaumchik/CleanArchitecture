@@ -7,7 +7,6 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import navumchyk.aliaksandr.cleanarchitecture.helpers.ImageHelper;
 
 /**
  * @author Aliaksandr Navumchyk
@@ -25,10 +24,5 @@ public class AppModule {
     @Singleton
     Context provideContext() {
         return appContext;
-    }
-
-    @Provides
-    ImageHelper provideImageManager() {
-        return new ImageHelper();
     }
 }

@@ -20,7 +20,6 @@ public class NewsFragmentRepository extends BaseRepository implements INewsFragm
 
     @Override
     public Single<ArrayList<NewsModel>> getNews() {
-        log("getNews");
         return mGetNewsUseCase.execute(null);
     }
 }

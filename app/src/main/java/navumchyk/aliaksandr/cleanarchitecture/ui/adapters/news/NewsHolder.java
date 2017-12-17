@@ -9,8 +9,8 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import navumchyk.aliaksandr.cleanarchitecture.R;
 import navumchyk.aliaksandr.cleanarchitecture.App;
+import navumchyk.aliaksandr.cleanarchitecture.R;
 import navumchyk.aliaksandr.cleanarchitecture.helpers.ImageHelper;
 import navumchyk.aliaksandr.cleanarchitecture.ui.adapters.common.BaseHolder;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
@@ -56,12 +56,14 @@ public class NewsHolder extends BaseHolder<String> {
         mNewsTitleTv.setText(mNewsModel.getTitle());
         mNewsBodyTv.setText(mNewsModel.getBody());
 
-        final Subscription subscription = mImageHelper.loadImageRx(mContext,
-                                                                   mNewsModel.getImg(),
-                                                                   mNewsImg,
-                                                                   NEWS_IMG_WIDTH,
-                                                                   NEWS_IMG_HEIGHT);
-
-        mCompositeSubscription.add(subscription);
+        if (mNewsModel.getEnclosure() != null) {
+            final Subscription subscription = mImageHelper.loadImageRx(
+                    mContext,
+                    mNewsModel.getEnclosure().getUrl(),
+                    mNewsImg,
+                    NEWS_IMG_WIDTH,
+                    NEWS_IMG_HEIGHT);
+            mCompositeSubscription.add(subscription);
+        }
     }
 }
