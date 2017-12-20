@@ -4,7 +4,7 @@ import dagger.Module;
 import dagger.Provides;
 import navumchyk.aliaksandr.cleanarchitecture.interactors.news.INewsFragmentInteractor;
 import navumchyk.aliaksandr.cleanarchitecture.interactors.news.NewsFragmentInteractor;
-import navumchyk.aliaksandr.cleanarchitecture.network.usecase.GetNewsUseCase;
+import navumchyk.aliaksandr.cleanarchitecture.network.usecase.news.GetNewsUseCase;
 import navumchyk.aliaksandr.cleanarchitecture.repositories.news.INewsFragmentRepository;
 import navumchyk.aliaksandr.cleanarchitecture.repositories.news.NewsFragmentRepository;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.presenter.INewsFragmentPresenter;

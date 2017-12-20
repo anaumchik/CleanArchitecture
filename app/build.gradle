@@ -12,7 +12,7 @@ ext {
     loggingInterceptorVersion = '3.8.1'
     // dagger 2
     daggerVersion = '2.11'
-    // reactive
+    // rx
     rxJavaVersion = '1.1.5'
     rxAndroidVersion = '1.2.1'
     rxBindingVersion = '2.0.0'
@@ -25,8 +25,8 @@ ext {
     lombokVersion = '1.16.18'
 }
 
-def versionMajor = 4
-def versionMinor = 0
+def versionMajor = 0
+def versionMinor = 1
 def versionPatch = 0
 def minSdk = 16
 

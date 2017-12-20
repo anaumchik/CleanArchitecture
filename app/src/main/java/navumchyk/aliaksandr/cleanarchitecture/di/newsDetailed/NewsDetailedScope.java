@@ -1,4 +1,4 @@
-package navumchyk.aliaksandr.cleanarchitecture.di.newsdetailed;
+package navumchyk.aliaksandr.cleanarchitecture.di.newsDetailed;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

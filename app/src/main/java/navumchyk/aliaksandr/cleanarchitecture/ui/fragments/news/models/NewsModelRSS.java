@@ -10,11 +10,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Root(name = "rss", strict = false)
-public class RSSModelResponse {
+public class NewsModelRSS {
 
     @Getter
     @Setter
     @Path("channel")
     @ElementList(entry = "item", inline = true)
-    private ArrayList<NewsModel> newsModelList;
+    private ArrayList<NewsModel> newsList;
 }

@@ -2,7 +2,7 @@ package navumchyk.aliaksandr.cleanarchitecture.repositories.news;
 
 import java.util.ArrayList;
 
-import navumchyk.aliaksandr.cleanarchitecture.network.usecase.GetNewsUseCase;
+import navumchyk.aliaksandr.cleanarchitecture.network.usecase.news.GetNewsUseCase;
 import navumchyk.aliaksandr.cleanarchitecture.repositories.common.BaseRepository;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
 import rx.Single;

@@ -9,7 +9,7 @@ import lombok.ToString;
 
 @Root(name = "enclosure")
 @ToString
-public class Enclosure {
+public class NewsModelEnclosure {
 
     @Getter
     @Setter
