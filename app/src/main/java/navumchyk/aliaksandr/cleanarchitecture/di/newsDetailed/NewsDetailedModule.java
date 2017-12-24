@@ -7,8 +7,8 @@ import navumchyk.aliaksandr.cleanarchitecture.interactors.newsDetailed.INewsDeta
 import navumchyk.aliaksandr.cleanarchitecture.interactors.newsDetailed.NewsDetailedFragmentInteractor;
 import navumchyk.aliaksandr.cleanarchitecture.repositories.newsDetailed.INewsDetailedFragmentRepository;
 import navumchyk.aliaksandr.cleanarchitecture.repositories.newsDetailed.NewsDetailedFragmentRepository;
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.presenter.INewsDetailedFragmentPresenter;
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.presenter.NewsDetailedFragmentPresenter;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.presenter.INewsDetailedFragmentPresenter;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.presenter.NewsDetailedFragmentPresenter;
 
 /**
  * @author Aliaksandr Navumchyk

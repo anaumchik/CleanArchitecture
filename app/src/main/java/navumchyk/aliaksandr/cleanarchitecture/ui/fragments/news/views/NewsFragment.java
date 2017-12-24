@@ -22,6 +22,7 @@ import navumchyk.aliaksandr.cleanarchitecture.ui.adapters.news.NewsAdapter;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.common.BaseFragment;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.presenter.INewsFragmentPresenter;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.views.NewsDetailedFragment;
 
 /**
  * @author Aliaksandr Navumchyk

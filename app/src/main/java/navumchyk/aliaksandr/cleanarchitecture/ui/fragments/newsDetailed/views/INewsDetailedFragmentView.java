@@ -1,4 +1,4 @@
-package navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.views;
+package navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.views;
 
 /**
  * @author Aliaksandr Navumchyk

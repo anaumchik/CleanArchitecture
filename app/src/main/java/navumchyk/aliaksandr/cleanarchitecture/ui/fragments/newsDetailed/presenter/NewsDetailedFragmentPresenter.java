@@ -1,4 +1,4 @@
-package navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.presenter;
+package navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.presenter;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -7,7 +7,7 @@ import navumchyk.aliaksandr.cleanarchitecture.helpers.ImageHelper;
 import navumchyk.aliaksandr.cleanarchitecture.interactors.newsDetailed.INewsDetailedFragmentInteractor;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.common.BasePresenter;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.views.INewsDetailedFragmentView;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.views.INewsDetailedFragmentView;
 import rx.Subscription;
 
 import static navumchyk.aliaksandr.cleanarchitecture.utils.Constants.NEWS_DETAILED_FRAGMENT_NEWS_MODEL_KEY;

@@ -1,7 +1,7 @@
 package navumchyk.aliaksandr.cleanarchitecture.di.newsDetailed;
 
 import dagger.Subcomponent;
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.views.NewsDetailedFragment;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.views.NewsDetailedFragment;
 
 /**
  * @author Aliaksandr Navumchyk
