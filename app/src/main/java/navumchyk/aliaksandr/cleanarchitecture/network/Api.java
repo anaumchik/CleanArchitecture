@@ -1,6 +1,6 @@
 package navumchyk.aliaksandr.cleanarchitecture.network;
 
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.RSSModelResponse;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModelRSS;
 import retrofit2.http.GET;
 import rx.Single;
 
@@ -10,5 +10,5 @@ import rx.Single;
 public interface Api {
 
     @GET("rss")
-    Single<RSSModelResponse> getNews();
+    Single<NewsModelRSS> getNews();
 }

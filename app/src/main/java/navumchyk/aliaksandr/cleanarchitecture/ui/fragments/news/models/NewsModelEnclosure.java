@@ -12,7 +12,7 @@ import lombok.ToString;
 
 @Root(name = "enclosure")
 @ToString
-public class Enclosure implements Parcelable {
+public class NewsModelEnclosure implements Parcelable {
 
     @Getter
     @Setter

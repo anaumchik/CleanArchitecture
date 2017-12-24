@@ -1,4 +1,4 @@
-package navumchyk.aliaksandr.cleanarchitecture.network.usecase;
+package navumchyk.aliaksandr.cleanarchitecture.network.usecase.news;
 
 import java.util.ArrayList;
 
@@ -8,7 +8,7 @@ import javax.inject.Singleton;
 import navumchyk.aliaksandr.cleanarchitecture.network.Api;
 import navumchyk.aliaksandr.cleanarchitecture.network.usecase.common.BaseUseCase;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.RSSModelResponse;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModelRSS;
 import rx.Single;
 import rx.subjects.PublishSubject;
 
@@ -30,6 +30,6 @@ public class GetNewsUseCase extends BaseUseCase<Void, ArrayList<NewsModel>, Void
                                                                PublishSubject retrievedData) {
         return mApiClient
                 .getNews()
-                .map(RSSModelResponse::getNewsModelList);
+                .map(NewsModelRSS::getNewsList);
     }
 }

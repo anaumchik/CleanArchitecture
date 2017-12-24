@@ -40,7 +40,7 @@ public class NewsModel implements Parcelable {
     @Getter
     @Setter
     @Element(required = false, name = "enclosure")
-    private Enclosure enclosure;
+    private NewsModelEnclosure enclosure;
     @Getter
     @Setter
     @Element(required = false, name = "link")
