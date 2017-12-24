@@ -15,8 +15,6 @@ ext {
     // rx
     rxJavaVersion = '1.1.5'
     rxAndroidVersion = '1.2.1'
-    rxBindingVersion = '2.0.0'
-    rxPermissionsVersion = '0.9.4@aar'
     // images
     glideVersion = '3.8.0'
     // logger
@@ -82,11 +80,9 @@ dependencies {
     implementation "com.google.dagger:dagger-android:$project.daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
     annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
-    // reactive
+    // rx
     compile "io.reactivex:rxjava:$project.rxJavaVersion"
     compile "io.reactivex:rxandroid:$project.rxAndroidVersion"
-    compile "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$project.rxBindingVersion"
-    compile "com.tbruyelle.rxpermissions2:rxpermissions:$project.rxPermissionsVersion"
     // images
     compile "com.github.bumptech.glide:glide:$project.glideVersion"
     // logger
