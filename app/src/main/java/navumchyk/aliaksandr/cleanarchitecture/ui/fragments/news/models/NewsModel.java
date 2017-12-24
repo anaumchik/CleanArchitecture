@@ -76,11 +76,11 @@ public class NewsModel implements Parcelable {
         this.category = in.readString();
         this.title = in.readString();
         this.body = in.readString();
-        this.enclosure = in.readParcelable(Enclosure.class.getClassLoader());
+        this.enclosure = in.readParcelable(NewsModelEnclosure.class.getClassLoader());
         this.link = in.readString();
     }
 
-    public static final Parcelable.Creator<NewsModel> CREATOR = new Parcelable.Creator<NewsModel>() {
+    public static final Creator<NewsModel> CREATOR = new Creator<NewsModel>() {
         @Override
         public NewsModel createFromParcel(Parcel source) {
             return new NewsModel(source);

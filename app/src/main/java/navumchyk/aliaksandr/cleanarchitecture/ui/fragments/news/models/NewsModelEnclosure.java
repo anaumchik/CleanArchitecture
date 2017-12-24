@@ -27,6 +27,9 @@ public class NewsModelEnclosure implements Parcelable {
     @Attribute(required = false, name = "type")
     protected String type;
 
+    public NewsModelEnclosure() {
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -39,24 +42,21 @@ public class NewsModelEnclosure implements Parcelable {
         dest.writeString(this.type);
     }
 
-    public Enclosure() {
-    }
-
-    protected Enclosure(Parcel in) {
+    protected NewsModelEnclosure(Parcel in) {
         this.url = in.readString();
         this.length = in.readString();
         this.type = in.readString();
     }
 
-    public static final Parcelable.Creator<Enclosure> CREATOR = new Parcelable.Creator<Enclosure>() {
+    public static final Creator<NewsModelEnclosure> CREATOR = new Creator<NewsModelEnclosure>() {
         @Override
-        public Enclosure createFromParcel(Parcel source) {
-            return new Enclosure(source);
+        public NewsModelEnclosure createFromParcel(Parcel source) {
+            return new NewsModelEnclosure(source);
         }
 
         @Override
-        public Enclosure[] newArray(int size) {
-            return new Enclosure[size];
+        public NewsModelEnclosure[] newArray(int size) {
+            return new NewsModelEnclosure[size];
         }
     };
 }
