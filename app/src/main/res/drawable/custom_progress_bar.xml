@@ -13,7 +13,7 @@
         android:useLevel="false"><!-- using true fixes the issue for lollipop api 21 -->
 
         <gradient
-            android:endColor="@color/blue"
+            android:endColor="@color/red"
             android:startColor="@android:color/transparent"
             android:type="sweep"
             android:useLevel="false"/>

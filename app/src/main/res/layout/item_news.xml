@@ -37,11 +37,12 @@
         android:layout_below="@+id/item_news_img"
         android:layout_marginBottom="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginTop="16dp"
         android:layout_marginLeft="24dp"
         android:layout_marginRight="24dp"
         android:layout_marginStart="24dp"
         android:ellipsize="end"
-        android:maxLines="6"
+        android:maxLines="5"
         app:customFont="PT_Sans_Regular.ttf"/>
 
 </RelativeLayout>

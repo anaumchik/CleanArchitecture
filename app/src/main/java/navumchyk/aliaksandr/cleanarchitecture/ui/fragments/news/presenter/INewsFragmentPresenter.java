@@ -1,6 +1,7 @@
 package navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.presenter;
 
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.common.IBasePresenter;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.views.INewsFragmentView;
 import rx.subjects.PublishSubject;
 
@@ -9,7 +10,7 @@ import rx.subjects.PublishSubject;
  */
 public interface INewsFragmentPresenter extends IBasePresenter<INewsFragmentView> {
 
-    void observeNewsAdapterItemClick(PublishSubject<String> subject);
+    void observeNewsAdapterItemClick(PublishSubject<NewsModel> subject);
 
     void loadNews();
 }

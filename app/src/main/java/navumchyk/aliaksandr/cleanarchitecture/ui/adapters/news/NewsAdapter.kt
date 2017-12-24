@@ -14,11 +14,11 @@ import rx.subjects.PublishSubject
 class NewsAdapter : BaseAdapter<
         NewsModel,
         NewsHolder,
-        String>(R.layout.item_news) {
+        NewsModel>(R.layout.item_news) {
 
     override fun createViewHolder(view: View,
                                   viewGroup: ViewGroup,
-                                  click: PublishSubject<String>): NewsHolder =
+                                  click: PublishSubject<NewsModel>): NewsHolder =
             NewsHolder(view, click)
 
     override fun onBindViewHolder(holder: NewsHolder, position: Int) {

@@ -6,8 +6,8 @@ import dagger.Component;
 import navumchyk.aliaksandr.cleanarchitecture.App;
 import navumchyk.aliaksandr.cleanarchitecture.di.news.NewsComponent;
 import navumchyk.aliaksandr.cleanarchitecture.di.news.NewsModule;
-import navumchyk.aliaksandr.cleanarchitecture.di.newsdetailed.NewsDetailedComponent;
-import navumchyk.aliaksandr.cleanarchitecture.di.newsdetailed.NewsDetailedModule;
+import navumchyk.aliaksandr.cleanarchitecture.di.newsDetailed.NewsDetailedComponent;
+import navumchyk.aliaksandr.cleanarchitecture.di.newsDetailed.NewsDetailedModule;
 import navumchyk.aliaksandr.cleanarchitecture.ui.adapters.news.NewsHolder;
 
 /**

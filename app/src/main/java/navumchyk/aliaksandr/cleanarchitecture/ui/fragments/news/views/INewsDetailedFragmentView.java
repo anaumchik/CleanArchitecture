@@ -1,19 +1,17 @@
 package navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.views;
 
-import java.util.ArrayList;
-
-import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
-
 /**
  * @author Aliaksandr Navumchyk
  */
-public interface INewsFragmentView {
+public interface INewsDetailedFragmentView {
 
-    void setAppBarTitle();
+    void showAppBarBackArrow();
 
-    void initNewsAdapter();
+    void setAppBarTitle(String text);
 
-    void setNewsAdapterData(ArrayList<NewsModel> data);
+    void setTitle(String text);
+
+    void setBody(String text);
 
     void showProgressDialog();
 
@@ -27,5 +25,4 @@ public interface INewsFragmentView {
 
     void hideNoContentContainer();
 
-    void openNewsDetailedFragment(NewsModel newsModel);
 }

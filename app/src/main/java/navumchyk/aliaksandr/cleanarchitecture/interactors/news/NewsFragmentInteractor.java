@@ -12,7 +12,7 @@ import rx.Single;
  */
 public class NewsFragmentInteractor extends BaseInteractor implements INewsFragmentInteractor {
 
-    private INewsFragmentRepository mNewsFragmentRepository;
+    private final INewsFragmentRepository mNewsFragmentRepository;
 
     public NewsFragmentInteractor(INewsFragmentRepository mNewsFragmentRepository) {
         this.mNewsFragmentRepository = mNewsFragmentRepository;

@@ -11,5 +11,4 @@ import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.views.NewsFragme
 public interface NewsComponent {
 
     void inject(NewsFragment fragment);
-
 }
