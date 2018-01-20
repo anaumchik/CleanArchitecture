@@ -4,8 +4,8 @@ This is a sample about how to architect android application using the Uncle Bob'
 
 ## Main Goals
 * Clean Architecture
-* RxJava + Retrofit
-* Parsing XML
+* RxJava + RxAndroid
+* Retrofit + Parsing XML
 
 ## Built With
 
