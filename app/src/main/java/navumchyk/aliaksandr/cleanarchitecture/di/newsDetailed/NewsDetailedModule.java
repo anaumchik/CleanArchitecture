@@ -1,6 +1,14 @@
 package navumchyk.aliaksandr.cleanarchitecture.di.newsDetailed;
 
 import dagger.Module;
+import dagger.Provides;
+import navumchyk.aliaksandr.cleanarchitecture.helpers.ImageHelper;
+import navumchyk.aliaksandr.cleanarchitecture.interactors.newsDetailed.INewsDetailedFragmentInteractor;
+import navumchyk.aliaksandr.cleanarchitecture.interactors.newsDetailed.NewsDetailedFragmentInteractor;
+import navumchyk.aliaksandr.cleanarchitecture.repositories.newsDetailed.INewsDetailedFragmentRepository;
+import navumchyk.aliaksandr.cleanarchitecture.repositories.newsDetailed.NewsDetailedFragmentRepository;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.presenter.INewsDetailedFragmentPresenter;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.presenter.NewsDetailedFragmentPresenter;
 
 /**
  * @author Aliaksandr Navumchyk
@@ -8,22 +16,23 @@ import dagger.Module;
 @Module
 public class NewsDetailedModule {
 
-//    @Provides
-//    @NewsDetailedScope
-//    INewsDetailedRepository provideINewsDetailedRepository() {
-//        return new NewsDetailedRepository();
-//    }
-//
-//    @Provides
-//    @NewsDetailedScope
-//    INewsDetailedInteractor provideINewsDetailedInteractor(INewsDetailedRepository repository) {
-//        return new NewsDetailedInteractor(repository );
-//    }
-//
-//    @Provides
-//    @NewsDetailedScope
-//    INewsDetailedPresenter provideINewsDetailedPresenter(INewsDetailedInteractor interactor) {
-//        return new NewsDetailedPresenter(interactor);
-//    }
+    @Provides
+    @NewsDetailedScope
+    INewsDetailedFragmentRepository provideINewsDetailedFragmentRepository() {
+        return new NewsDetailedFragmentRepository();
+    }
+
+    @Provides
+    @NewsDetailedScope
+    INewsDetailedFragmentInteractor provideINewsDetailedFragmentInteractor(INewsDetailedFragmentRepository repository) {
+        return new NewsDetailedFragmentInteractor(repository);
+    }
+
+    @Provides
+    @NewsDetailedScope
+    INewsDetailedFragmentPresenter provideINewsDetailedPresenter(INewsDetailedFragmentInteractor interactor,
+                                                                 ImageHelper imageHelper) {
+        return new NewsDetailedFragmentPresenter(interactor, imageHelper);
+    }
 
 }

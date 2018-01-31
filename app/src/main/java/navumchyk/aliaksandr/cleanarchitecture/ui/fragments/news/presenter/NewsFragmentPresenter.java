@@ -18,7 +18,7 @@ import rx.subjects.PublishSubject;
 public class NewsFragmentPresenter extends BasePresenter<INewsFragmentView>
         implements INewsFragmentPresenter {
 
-    private INewsFragmentInteractor mNewsFragmentInteractor;
+    private final INewsFragmentInteractor mNewsFragmentInteractor;
     private INewsFragmentView mNewsFragmentView;
 
     public NewsFragmentPresenter(INewsFragmentInteractor newsInteractor) {
@@ -56,9 +56,12 @@ public class NewsFragmentPresenter extends BasePresenter<INewsFragmentView>
     }
 
     @Override
-    public void observeNewsAdapterItemClick(PublishSubject<String> subject) {
+    public void observeNewsAdapterItemClick(PublishSubject<NewsModel> subject) {
         final Subscription subscription = subject
-                .subscribe(link -> log("link: " + link),
+                .subscribe(newsModel -> {
+                               log("newsModel: " + newsModel.toString());
+                               mNewsFragmentView.openNewsDetailedFragment(newsModel);
+                           },
                            throwable -> logError(throwable.getMessage()));
 
         mCompositeSubscription.add(subscription);

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/news_detailed_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <navumchyk.aliaksandr.cleanarchitecture.ui.customView.CustomRoundCornersImageView
+            android:id="@+id/news_detailed_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"/>
+
+        <navumchyk.aliaksandr.cleanarchitecture.ui.customView.CustomFontTextView
+            android:id="@+id/news_detailed_title_tv"
+            style="@style/CustomBlackText20"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginEnd="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            app:customFont="PT_Sans_Bold.ttf"/>
+
+        <navumchyk.aliaksandr.cleanarchitecture.ui.customView.CustomFontTextView
+            android:id="@+id/news_detailed_body_tv"
+            style="@style/CustomBlackText16"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            app:customFont="PT_Sans_Regular.ttf"/>
+
+    </LinearLayout>
+
+</ScrollView>

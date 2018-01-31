@@ -3,6 +3,7 @@ package navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.views;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -21,13 +22,14 @@ import navumchyk.aliaksandr.cleanarchitecture.ui.adapters.news.NewsAdapter;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.common.BaseFragment;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.models.NewsModel;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.news.presenter.INewsFragmentPresenter;
+import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.newsDetailed.views.NewsDetailedFragment;
 
 /**
  * @author Aliaksandr Navumchyk
  */
 public class NewsFragment extends BaseFragment implements INewsFragmentView {
 
-    @Inject INewsFragmentPresenter mINewsPresenter;
+    @Inject INewsFragmentPresenter mNewsFragmentPresenter;
     @BindView(R.id.app_bar_title_tv) TextView mAppBarTitle;
     @BindView(R.id.news_content_container) View mContentContainer;
     @BindView(R.id.news_progress_dialog) ProgressBar mProgressDialog;
@@ -46,14 +48,14 @@ public class NewsFragment extends BaseFragment implements INewsFragmentView {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        mINewsPresenter.bindView(this);
-        mINewsPresenter.initStartViewActions();
-        mINewsPresenter.loadNews();
+        mNewsFragmentPresenter.bindView(this);
+        mNewsFragmentPresenter.initStartViewActions();
+        mNewsFragmentPresenter.loadNews();
     }
 
     @Override
     public void onDestroyView() {
-        mINewsPresenter.unbindView();
+        mNewsFragmentPresenter.unbindView();
         super.onDestroyView();
     }
 
@@ -73,7 +75,7 @@ public class NewsFragment extends BaseFragment implements INewsFragmentView {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setAdapter(mNewsAdapter);
-        mINewsPresenter.observeNewsAdapterItemClick(mNewsAdapter.observeItemClick());
+        mNewsFragmentPresenter.observeNewsAdapterItemClick(mNewsAdapter.observeItemClick());
     }
 
     @Override
@@ -109,5 +111,18 @@ public class NewsFragment extends BaseFragment implements INewsFragmentView {
     @Override
     public void hideNoContentContainer() {
         mNoContentContainer.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void openNewsDetailedFragment(NewsModel newsModel) {
+        if (getActivity() != null) {
+            final FragmentTransaction transaction = getActivity()
+                    .getSupportFragmentManager()
+                    .beginTransaction()
+                    .addToBackStack(null)
+                    .replace(R.id.main_fragment_container,
+                             NewsDetailedFragment.newInstance(newsModel));
+            transaction.commit();
+        }
     }
 }

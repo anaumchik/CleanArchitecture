@@ -22,13 +22,18 @@
         <item name="android:indeterminateDrawable">@drawable/custom_progress_bar</item>
     </style>
 
-    <style name="CustomBlackText16">
+    <style name="CustomBlackText">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:textSize">16sp</item>
     </style>
 
+    <style name="CustomBlackText16" parent="CustomBlackText">
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="CustomBlackText20" parent="CustomBlackText">
+        <item name="android:textSize">20sp</item>
+    </style>
     <style name="CustomRedText20">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

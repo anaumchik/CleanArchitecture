@@ -20,7 +20,7 @@ import rx.subjects.PublishSubject;
 /**
  * @author Aliaksandr Navumchyk
  */
-public class NewsHolder extends BaseHolder<String> {
+public class NewsHolder extends BaseHolder<NewsModel> {
 
     private static final int NEWS_IMG_WIDTH = 64;
     private static final int NEWS_IMG_HEIGHT = 64;
@@ -33,7 +33,7 @@ public class NewsHolder extends BaseHolder<String> {
     private NewsModel mNewsModel;
     private Context mContext;
 
-    public NewsHolder(View v, PublishSubject<String> click) {
+    public NewsHolder(View v, PublishSubject<NewsModel> click) {
         super(v, click);
         App.getApplication().getAppComponent().inject(this);
     }
@@ -46,7 +46,7 @@ public class NewsHolder extends BaseHolder<String> {
 
     @OnClick(R.id.item_news_root)
     void onClickItem() {
-        mClick.onNext(mNewsModel.getLink());
+        mClick.onNext(mNewsModel);
     }
 
     public void init(NewsModel newsModel) {
@@ -54,7 +54,7 @@ public class NewsHolder extends BaseHolder<String> {
         mContext = mNewsTitleTv.getContext();
 
         mNewsTitleTv.setText(mNewsModel.getTitle());
-        mNewsBodyTv.setText(mNewsModel.getBody());
+        mNewsBodyTv.setText(mNewsModel.getBody().trim());
 
         if (mNewsModel.getEnclosure() != null) {
             final Subscription subscription = mImageHelper.loadImageRx(

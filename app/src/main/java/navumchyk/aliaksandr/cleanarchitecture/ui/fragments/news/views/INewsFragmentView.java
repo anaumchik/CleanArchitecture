@@ -26,4 +26,6 @@ public interface INewsFragmentView {
     void showNoContentContainer();
 
     void hideNoContentContainer();
+
+    void openNewsDetailedFragment(NewsModel newsModel);
 }
