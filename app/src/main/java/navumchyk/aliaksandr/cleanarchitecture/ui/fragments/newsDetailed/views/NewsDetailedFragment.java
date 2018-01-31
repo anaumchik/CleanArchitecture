@@ -68,7 +68,7 @@ public class NewsDetailedFragment extends BaseFragment implements INewsDetailedF
     }
 
     @Override
-    protected int getLayout() {
+    public int getLayout() {
         return R.layout.fragment_news_detailed;
     }
 

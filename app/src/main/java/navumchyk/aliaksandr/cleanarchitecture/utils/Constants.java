@@ -1,8 +1,6 @@
 package navumchyk.aliaksandr.cleanarchitecture.utils;
 
 /**
- * Constants contains necessary constant fields.
- *
  * @author Aliaksandr Naumhick
  */
 public class Constants {

@@ -11,7 +11,7 @@ import rx.subjects.PublishSubject;
 /**
  * @author Aliaksandr Navumchyk
  */
-public class NewsAdapter extends BaseAdapter<NewsModel, NewsHolder, String> {
+public class NewsAdapter extends BaseAdapter<NewsModel, NewsHolder, NewsModel> {
 
     public NewsAdapter() {
         super(R.layout.item_news);
@@ -20,7 +20,7 @@ public class NewsAdapter extends BaseAdapter<NewsModel, NewsHolder, String> {
     @Override
     public NewsHolder createViewHolder(View view,
                                        ViewGroup viewGroup,
-                                       PublishSubject<String> click) {
+                                       PublishSubject<NewsModel> click) {
         return new NewsHolder(view, click);
     }
 
