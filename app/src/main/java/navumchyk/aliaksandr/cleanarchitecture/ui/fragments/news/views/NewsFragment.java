@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import javax.inject.Inject;
 
 import butterknife.BindView;
-import navumchyk.aliaksandr.cleanarchitecture.R;
 import navumchyk.aliaksandr.cleanarchitecture.App;
+import navumchyk.aliaksandr.cleanarchitecture.R;
 import navumchyk.aliaksandr.cleanarchitecture.di.news.NewsModule;
 import navumchyk.aliaksandr.cleanarchitecture.ui.adapters.news.NewsAdapter;
 import navumchyk.aliaksandr.cleanarchitecture.ui.fragments.common.BaseFragment;
@@ -58,7 +58,7 @@ public class NewsFragment extends BaseFragment implements INewsFragmentView {
     }
 
     @Override
-    protected int getLayout() {
+    public int getLayout() {
         return R.layout.fragment_news;
     }
 

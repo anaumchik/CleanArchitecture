@@ -1,6 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.jakewharton.butterknife'
 
 ext {
@@ -57,25 +55,22 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     // core
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile "com.android.support:appcompat-v7:$project.androidSupportVersion"
-    compile "com.android.support:support-v4:$project.androidSupportVersion"
-    compile "com.android.support:design:$project.androidSupportVersion"
-    compile "com.android.support:recyclerview-v7:$project.androidSupportVersion"
-    compile "com.android.support:cardview-v7:$project.androidSupportVersion"
-    compile "com.android.support.constraint:constraint-layout:$project.androidConstraintLayoutVersion"
-    // kotlin
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlinVersion"
+    implementation "com.android.support:appcompat-v7:$project.androidSupportVersion"
+    implementation "com.android.support:support-v4:$project.androidSupportVersion"
+    implementation "com.android.support:design:$project.androidSupportVersion"
+    implementation "com.android.support.constraint:constraint-layout:$project.androidConstraintLayoutVersion"
+    implementation "com.android.support:recyclerview-v7:$project.androidSupportVersion"
+    implementation "com.android.support:cardview-v7:$project.androidSupportVersion"
     // network
-    compile "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
-    compile "com.squareup.retrofit2:adapter-rxjava:$project.retrofitVersion"
-    compile "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
-    compile("com.squareup.retrofit2:converter-simplexml:$project.retrofitVersion") {
+    implementation "com.squareup.retrofit2:retrofit:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$project.retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$project.retrofitVersion"
+    implementation("com.squareup.retrofit2:converter-simplexml:$project.retrofitVersion") {
         exclude group: 'xpp3', module: 'xpp3'
         exclude group: 'stax', module: 'stax-api'
         exclude group: 'stax', module: 'stax'
     }
-    compile "com.squareup.okhttp3:logging-interceptor:$project.loggingInterceptorVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$project.loggingInterceptorVersion"
     // dagger 2
     implementation "com.google.dagger:dagger:$project.daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
@@ -83,18 +78,18 @@ dependencies {
     implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
     annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
     // reactive
-    compile "io.reactivex:rxjava:$project.rxJavaVersion"
-    compile "io.reactivex:rxandroid:$project.rxAndroidVersion"
-    compile "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$project.rxBindingVersion"
-    compile "com.tbruyelle.rxpermissions2:rxpermissions:$project.rxPermissionsVersion"
+    implementation "io.reactivex:rxjava:$project.rxJavaVersion"
+    implementation "io.reactivex:rxandroid:$project.rxAndroidVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$project.rxBindingVersion"
+    implementation "com.tbruyelle.rxpermissions2:rxpermissions:$project.rxPermissionsVersion"
     // images
-    compile "com.github.bumptech.glide:glide:$project.glideVersion"
+    implementation "com.github.bumptech.glide:glide:$project.glideVersion"
     // logger
-    compile "com.orhanobut:logger:$project.loggerVersion"
+    implementation "com.orhanobut:logger:$project.loggerVersion"
     // lombok
-    compile "org.projectlombok:lombok:$project.lombokVersion"
+    implementation "org.projectlombok:lombok:$project.lombokVersion"
     annotationProcessor "org.projectlombok:lombok:$project.lombokVersion"
     // butterknife
-    compile "com.jakewharton:butterknife:$butterknifeVersion"
+    implementation "com.jakewharton:butterknife:$butterknifeVersion"
     annotationProcessor "com.jakewharton:butterknife-compiler:$project.butterknifeVersion"
 }

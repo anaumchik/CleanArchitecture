@@ -1,7 +1,5 @@
 package navumchyk.aliaksandr.cleanarchitecture.ui.adapters.common;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.ArrayList;
 
 import rx.subjects.PublishSubject;
@@ -11,14 +9,13 @@ import rx.subjects.PublishSubject;
  */
 public interface IBaseAdapter<TypeData, ClickData> {
 
-    void setData(@NotNull ArrayList<TypeData> data);
+    void setData(ArrayList<TypeData> data);
 
     ArrayList<TypeData> getData();
 
     TypeData getItem(final int position);
 
     PublishSubject<ClickData> observeItemClick();
-
 }
 
 
